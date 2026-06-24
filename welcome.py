@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 
 GIF_URL = "https://media1.tenor.com/m/MTl2RygQbPIAAAAC/billie-billie-eilish.gif"
-
 WELCOME_CHANNEL_ID = 1515772992880377906
 
 
@@ -27,8 +26,8 @@ Tu viens de rejoindre le serveur RP 💚
 
 📌 Pense à :
 • Lire le règlement
+• Faire tes premiers pas dans le RP
 • Ouvrir un ticket si besoin
-• Faire ta candidature staff si tu veux rejoindre l’équipe
 
 🚀 Amuse-toi bien parmi nous !
 """,
@@ -38,7 +37,8 @@ Tu viens de rejoindre le serveur RP 💚
         embed.set_image(url=GIF_URL)
         embed.set_footer(text="BILLIE FR RP • Welcome System")
 
-        await channel.send(content=member.mention, embed=embed)
+        # 💬 MESSAGE + EMBED
+        await channel.send(content=f"{member.mention} 👋", embed=embed)
 
 
 async def setup(bot):
