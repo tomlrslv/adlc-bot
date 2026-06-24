@@ -1,129 +1,114 @@
 import discord
 from discord.ext import commands
+import os
 
-TOKEN = "MTUxOTM3MTUyNjY3ODI0OTY2Mw.GoArEJ.vb1N2Vu8qlod8Fp33qse-narRuTRr--KOk5960"
+# 🔐 TOKEN sécurisé (Railway)
+TOKEN = os.getenv("TOKEN")
 
+# ⚙️ Intents
 intents = discord.Intents.default()
 intents.message_content = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-
-@bot.event
-async def on_ready():
-    print(f"✅ Connecté en tant que {bot.user}")
-
+# ─────────────────────────────
+# 💚 STAFF IG
+# ─────────────────────────────
 
 @bot.command(name="staff-ig")
 async def staff_ig(ctx):
     await ctx.message.delete()
 
     await ctx.send("""
-**# 📋 CANDIDATURE STAFF IG**
+# 📋 CANDIDATURE STAFF IG
 
-**Bonjour et merci de l’intérêt que tu portes à BILLIE FR RP 💚**
+Bonjour et merci de l’intérêt que tu portes à BILLIE FR RP 💚
 
-**Nous recherchons des personnes sérieuses, actives et motivées pour assurer le bon fonctionnement du roleplay.**
+Nous recherchons des personnes sérieuses, actives et motivées pour assurer le bon fonctionnement du roleplay.
 
-**# 👤 INFORMATIONS GÉNÉRALES**
+# 👤 INFORMATIONS GÉNÉRALES
 
-**Pseudo Roblox :**
+Pseudo Roblox :
+Pseudo Discord :
+Âge :
+Fuseau horaire :
+Disponibilités :
 
-**Pseudo Discord :**
+# 💚 MOTIVATION
 
-**Âge :**
+Pourquoi souhaites-tu rejoindre le Staff IG ?
+Quelles sont tes motivations principales ?
+Quelles qualités doit avoir un bon staff IG ?
 
-**Fuseau horaire :**
+# 🎮 EXPÉRIENCE
 
-**Disponibilités :**
+As-tu déjà été staff sur un serveur RP ?
+Si oui, lequel et à quel poste ?
+Ton niveau en roleplay ?
 
-**# 💚 MOTIVATION**
+# 🧠 MISE EN SITUATION
 
-**Pourquoi souhaites-tu rejoindre le Staff IG de BILLIE FR RP ?**
+Un joueur ne respecte pas les règles RP. Que fais-tu ?
+Deux joueurs sont en conflit. Que fais-tu ?
+Tu ne comprends pas une situation. Que fais-tu ?
 
-**Quelles sont tes motivations principales ?**
+# ✨ CONCLUSION
 
-**Selon toi, quelles sont les qualités d’un bon staff IG ?**
+Pourquoi devrions-nous te choisir ?
+As-tu quelque chose à ajouter ?
 
-**# 🎮 EXPÉRIENCE**
-
-**As-tu déjà été staff sur un serveur RP ?**
-
-**Si oui, lequel et à quel poste ?**
-
-**Comment décrirais-tu ton niveau en roleplay ?**
-
-**# 🧠 MISE EN SITUATION**
-
-**Un joueur ne respecte pas les règles RP. Que fais-tu ?**
-
-**Deux joueurs sont en conflit, comment réagis-tu ?**
-
-**Tu ne comprends pas une situation. Que fais-tu ?**
-
-**# ✨ CONCLUSION**
-
-**Pourquoi devrions-nous te choisir ?**
-
-**As-tu quelque chose à ajouter ?**
-
-**Bonne chance pour ta candidature 💚**
+Bonne chance 💚
 """)
 
+# ─────────────────────────────
+# 💚 STAFF DISCORD
+# ─────────────────────────────
 
 @bot.command(name="staff-discord")
 async def staff_discord(ctx):
     await ctx.message.delete()
 
     await ctx.send("""
-**# 📋 CANDIDATURE STAFF DISCORD**
+# 📋 CANDIDATURE STAFF DISCORD
 
-**Bonjour et merci de l’intérêt que tu portes à BILLIE FR RP 💚**
+Bonjour et merci de l’intérêt que tu portes à BILLIE FR RP 💚
 
-**Nous recherchons des personnes sérieuses et actives pour maintenir une bonne ambiance sur le serveur.**
+Nous recherchons des personnes sérieuses et actives pour gérer la communauté Discord.
 
-**# 👤 INFORMATIONS GÉNÉRALES**
+# 👤 INFORMATIONS GÉNÉRALES
 
-**Pseudo Discord :**
+Pseudo Discord :
+Âge :
+Fuseau horaire :
+Disponibilités :
 
-**Âge :**
+# 💚 MOTIVATION
 
-**Fuseau horaire :**
+Pourquoi souhaites-tu rejoindre le Staff Discord ?
+Tes qualités ?
+Tes défauts ?
 
-**Disponibilités :**
+# 🛠️ EXPÉRIENCE
 
-**# 💚 MOTIVATION**
+As-tu déjà été staff sur un serveur Discord ?
+Si oui, lequel et à quel poste ?
 
-**Pourquoi souhaites-tu rejoindre le Staff Discord de BILLIE FR RP ?**
+# 🧠 MISE EN SITUATION
 
-**Quelles sont tes qualités principales ?**
+Un membre spam, que fais-tu ?
+Un membre est toxique, que fais-tu ?
+Tu es perdu dans une situation, que fais-tu ?
 
-**Quels sont tes défauts ?**
+# ✨ CONCLUSION
 
-**# 🛠️ EXPÉRIENCE**
+Pourquoi toi et pas un autre ?
+As-tu quelque chose à ajouter ?
 
-**As-tu déjà été staff sur un serveur Discord ?**
-
-**Si oui, lequel et à quel poste ?**
-
-**Comment réagirais-tu face à une situation compliquée entre membres ?**
-
-**# 🧠 MISE EN SITUATION**
-
-**Un membre spam, que fais-tu ?**
-
-**Un membre est irrespectueux, comment réagis-tu ?**
-
-**Tu ne sais pas gérer une situation, que fais-tu ?**
-
-**# ✨ CONCLUSION**
-
-**Pourquoi devrions-nous te choisir ?**
-
-**As-tu quelque chose à ajouter ?**
-
-**Bonne chance pour ta candidature 💚**
+Bonne chance 💚
 """)
 
+# ─────────────────────────────
+# ▶️ LANCEMENT DU BOT
+# ─────────────────────────────
 
 bot.run(TOKEN)
