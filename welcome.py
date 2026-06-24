@@ -3,6 +3,8 @@ from discord.ext import commands
 
 GIF_URL = "https://media1.tenor.com/m/MTl2RygQbPIAAAAC/billie-billie-eilish.gif"
 
+WELCOME_CHANNEL_ID = 1515772992880377906
+
 
 class Welcome(commands.Cog):
     def __init__(self, bot):
@@ -10,8 +12,8 @@ class Welcome(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
-        # 🎯 salon "bienvenue"
-        channel = discord.utils.get(member.guild.text_channels, name="bienvenue")
+
+        channel = self.bot.get_channel(WELCOME_CHANNEL_ID)
 
         if channel is None:
             return
@@ -19,14 +21,14 @@ class Welcome(commands.Cog):
         embed = discord.Embed(
             title="💚 Bienvenue sur BILLIE FR RP",
             description=f"""
-✨ Salut {member.mention} !
+✨ Bienvenue {member.mention} !
 
-Bienvenue sur le serveur RP 💚
+Tu viens de rejoindre le serveur RP 💚
 
 📌 Pense à :
 • Lire le règlement
-• Faire ta candidature staff si tu veux rejoindre l'équipe
 • Ouvrir un ticket si besoin
+• Faire ta candidature staff si tu veux rejoindre l’équipe
 
 🚀 Amuse-toi bien parmi nous !
 """,
